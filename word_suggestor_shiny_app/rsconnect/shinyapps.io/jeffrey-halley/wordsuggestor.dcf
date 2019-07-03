@@ -1,0 +1,13 @@
+name: wordsuggestor
+title: wordsuggestor
+username:
+account: jeffrey-halley
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 968001
+bundleId: 2180864
+url: https://jeffrey-halley.shinyapps.io/wordsuggestor/
+when: 1561584202.44237
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: app.R

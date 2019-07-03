@@ -1,10 +1,9 @@
-#Load Required Libraries
 library(dplyr)
 library(data.table)
 library(feather)
 
 
-#Load Word Lists:
+# Load Word Lists:
 matched.twograms<-read_feather(paste("data/","matched.twograms.feather",sep=""))
 matched.threegrams<-read_feather(paste("data/","matched.threegrams.feather",sep=""))
 matched.fourgrams<-read_feather(paste("data/","matched.fourgrams.feather",sep=""))
@@ -12,7 +11,7 @@ matched.fivegrams<-read_feather(paste("data/","matched.fivegrams.feather",sep=""
 matched.sixgrams<-read_feather(paste("data/","matched.fivegrams.feather",sep=""))
 
 
-#Load Defined Functions
+# Load Defined Functions
 removepossessives<- function(x) {
   x<-unlist(strsplit(x, "('s)", perl=TRUE))
   x<-paste(x,collapse = "")

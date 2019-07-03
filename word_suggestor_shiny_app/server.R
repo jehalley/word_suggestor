@@ -18,8 +18,6 @@ removepossessives<- function(x) {
   x<-paste(x,collapse = "")
 }
 
-#Define Main Model
-
 simplewordsuggest<-function(x){
   sentence<-x
   sentence<-unlist(removepossessives(sentence))
@@ -31,28 +29,24 @@ simplewordsuggest<-function(x){
     
     if(nrow(nextword)<3){
       fourgram<-paste(sentence[length(sentence)-3],sentence[length(sentence)-2],sentence[length(sentence)-1],sentence[length(sentence)],sep = "_")
-      #fourgramnextword<-matched.fivegrams[which(matched.fivegrams$feature==fourgram),]
       fourgramnextword<-filter(matched.fivegrams,feature==fourgram)
       nextword<-rbind(nextword,fourgramnextword)
     }
     
     if(nrow(nextword)<3){
       threegram<-paste(sentence[length(sentence)-2],sentence[length(sentence)-1],sentence[length(sentence)],sep = "_")
-      #threegramnextword<-matched.fourgrams[which(matched.fourgrams$feature==threegram),]
       threegramnextword<-filter(matched.fourgrams,feature==threegram)  
       nextword<-rbind(nextword,threegramnextword)
     }
     
     if(nrow(nextword)<3){
       twogram<-paste(sentence[length(sentence)-1],sentence[length(sentence)],sep = "_")
-      #twogramnextword<-matched.threegrams[which(matched.threegrams$feature==twogram),]
       twogramnextword<-filter(matched.threegrams,feature==twogram)
       nextword<-rbind(nextword,twogramnextword)
     }
     
     if(nrow(nextword)<3){
       onegram<-sentence[length(sentence)]
-      #onegramnextword<-matched.twograms[which(matched.twograms$feature==onegram),]
       onegramnextword<-filter(matched.twograms,feature==onegram)
       nextword<-rbind(nextword,onegramnextword)
     }
@@ -62,26 +56,22 @@ simplewordsuggest<-function(x){
   
   if(length(sentence) == 4){
     fourgram<-paste(sentence[length(sentence)-3],sentence[length(sentence)-2],sentence[length(sentence)-1],sentence[length(sentence)],sep = "_")
-    #fourgramnextword<-matched.fivegrams[which(matched.fivegrams$feature==fourgram),]
     nextword<-filter(matched.fivegrams,feature==fourgram)
     
     if(nrow(nextword)<3){
       threegram<-paste(sentence[length(sentence)-2],sentence[length(sentence)-1],sentence[length(sentence)],sep = "_")
-      #threegramnextword<-matched.fourgrams[which(matched.fourgrams$feature==threegram),]
       threegramnextword<-filter(matched.fourgrams,feature==threegram)  
       nextword<-rbind(nextword,threegramnextword)
     }
     
     if(nrow(nextword)<3){
       twogram<-paste(sentence[length(sentence)-1],sentence[length(sentence)],sep = "_")
-      #twogramnextword<-matched.threegrams[which(matched.threegrams$feature==twogram),]
       twogramnextword<-filter(matched.threegrams,feature==twogram)
       nextword<-rbind(nextword,twogramnextword)
     }
     
     if(nrow(nextword)<3){
       onegram<-sentence[length(sentence)]
-      #onegramnextword<-matched.twograms[which(matched.twograms$feature==onegram),]
       onegramnextword<-filter(matched.twograms,feature==onegram)
       nextword<-rbind(nextword,onegramnextword)
     }
@@ -90,19 +80,16 @@ simplewordsuggest<-function(x){
   
   if(length(sentence) == 3){
     threegram<-paste(sentence[length(sentence)-2],sentence[length(sentence)-1],sentence[length(sentence)],sep = "_")
-    #threegramnextword<-matched.fourgrams[which(matched.fourgrams$feature==threegram),]
     nextword<-filter(matched.fourgrams,feature==threegram)
     
     if(nrow(nextword)<3){
       twogram<-paste(sentence[length(sentence)-1],sentence[length(sentence)],sep = "_")
-      #twogramnextword<-matched.threegrams[which(matched.threegrams$feature==twogram),]
       twogramnextword<-filter(matched.threegrams,feature==twogram)
       nextword<-rbind(nextword,twogramnextword)
     }
     
     if(nrow(nextword)<3){
       onegram<-sentence[length(sentence)]
-      #onegramnextword<-matched.twograms[which(matched.twograms$feature==onegram),]
       onegramnextword<-filter(matched.twograms,feature==onegram)
       nextword<-rbind(nextword,onegramnextword)
     }
@@ -113,12 +100,10 @@ simplewordsuggest<-function(x){
   
   if(length(sentence) == 2){
     twogram<-paste(sentence[length(sentence)-1],sentence[length(sentence)],sep = "_")
-    #twogramnextword<-matched.threegrams[which(matched.threegrams$feature==twogram),]
     nextword<-filter(matched.threegrams,feature==twogram)
     
     if(nrow(nextword)<3){
       onegram<-sentence[length(sentence)]
-      #onegramnextword<-matched.twograms[which(matched.twograms$feature==onegram),]
       onegramnextword<-filter(matched.twograms,feature==onegram)
       nextword<-rbind(nextword,onegramnextword)
     }
@@ -126,7 +111,6 @@ simplewordsuggest<-function(x){
   
   if(length(sentence) == 1){
     onegram<-sentence[length(sentence)]
-    #onegramnextword<-matched.twograms[which(matched.twograms$feature==onegram),]
     nextword<-filter(matched.twograms,feature==onegram)
     
   } 

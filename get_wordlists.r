@@ -76,11 +76,11 @@ matched.fivegrams<-get_nextword_list(En_Tokens,5)
 matched.sixgrams<-get_nextword_list(En_Tokens,6)
 
 #weight word lists
-matched.twograms$frequency<-matched.twograms$frequency*1E6
-matched.threegrams$frequency<-matched.threegrams$frequency*1E7
-matched.fourgrams$frequency<-matched.fourgrams$frequency*1E8
-matched.fivegrams$frequency<-matched.fivegrams$frequency*1E10
-matched.sixgrams$frequency<-matched.sixgrams$frequency*1E11
+matched.twograms$frequency<-matched.twograms$frequency*1E0
+matched.threegrams$frequency<-matched.threegrams$frequency*1E1
+matched.fourgrams$frequency<-matched.fourgrams$frequency*1E2
+matched.fivegrams$frequency<-matched.fivegrams$frequency*1E3
+matched.sixgrams$frequency<-matched.sixgrams$frequency*1E4
 
 #trim matched ngram tables to remove infrequent ngrams
 matched.twograms<-subset(matched.twograms, frequency>2e+6)

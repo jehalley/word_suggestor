@@ -1,5 +1,7 @@
 # wordsuggester
-This repo contains the code to generates my predictive text web application https://jeffrey-halley.shinyapps.io/wordsuggester/
+This repo contains the code to generates my predictive text web application:
+
+https://jeffrey-halley.shinyapps.io/wordsuggester/
 
 # Instructions
 The "word_suggestor_shiny_app" folder contains everything you need to run the shiny app on a shiny server including premade word lists.

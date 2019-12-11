@@ -1,4 +1,4 @@
-# wordsuggester
+# Word Suggestor
 This repo contains the code to generate my predictive text web application:
 
 https://jeffrey-halley.shinyapps.io/wordsuggester/
